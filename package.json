@@ -4,6 +4,7 @@
   "description": "Website for ACM at UAB (Student Organization)",
   "main": "index.js",
   "scripts": {
+    "serve": "http-server",
     "test": "test"
   },
   "keywords": [
