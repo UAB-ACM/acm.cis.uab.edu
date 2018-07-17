@@ -1,0 +1,21 @@
+{
+  "name": "acm.cis.uab.edu",
+  "version": "1.0.0",
+  "description": "Website for ACM at UAB (Student Organization)",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "UAB",
+    "ACM"
+  ],
+  "author": "Chris Rocco",
+  "license": "ISC",
+  "dependencies": {
+    "jquery-hotspot": "^1.0.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
