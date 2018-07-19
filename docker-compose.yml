@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+
+  acm-website:
+    container_name: acm-website
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    environment:
+      PORT: 80
+    ports:
+      - 8080:80
+    command: npm run watch
