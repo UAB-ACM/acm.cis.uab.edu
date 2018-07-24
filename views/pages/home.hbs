@@ -1,40 +1,6 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-<head>
+{{#> layouts/main }}
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
-    <meta name="author" content="UAB ACM" />
-
-    <link rel="icon" href="images/uabacm.logo.png">
-    <title>UAB ACM</title>
-
-    <!-- Stylesheets
-    ============================================= -->
-    {{> styles}}
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{> google_analytics}}
-
-</head>
-
-<body class="stretched">
-
-	<!-- Document Wrapper
-	============================================= -->
-	<div id="wrapper" class="clearfix">
-
-		<!-- Top Bar
-		============================================= -->
-        {{> top_bar}}
-
-		<!-- Header
-		============================================= -->
-		{{> header_transparent}}
-        <!-- #header end -->
-
-		<!-- Slider
-		============================================= -->
+    {{#*inline "content-block"}}
 		<section id="slider" class="slider-element bg-angle">
 
 			<!-- Slider Background Map
@@ -70,10 +36,8 @@
 				</div>
 			</div>
 
-		</section><!-- #slider end -->
+		</section>
 
-		<!-- Content
-		============================================= -->
 		<section id="content">
 
 			<div class="content-wrap nopadding">
@@ -188,21 +152,7 @@
 
 			</div>
 
-		</section><!-- #content end -->
-
-        <!-- Footer
-        ============================================= -->
-        {{> footer}}
-
-	</div><!-- #wrapper end -->
-
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
-
-	<!-- External JavaScripts
-	============================================= -->
-    {{> javascripts}}
-
-</body>
-</html>
+		</section>
+    {{/inline}}
+	
+{{/layouts/main}}

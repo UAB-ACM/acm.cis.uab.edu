@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+    <meta name="author" content="UAB ACM" />
+
+    <link rel="icon" href="images/uabacm.logo.png">
+    <title>UAB ACM</title>
+
+    <!-- Stylesheets
+    ============================================= -->
+    {{> includes/styles}}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {{> includes/google_analytics}}
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Top Bar
+		============================================= -->
+        {{> includes/top_bar}}
+
+		<!-- Header
+		============================================= -->
+		{{#> header-block}}
+			{{> includes/header_transparent}}
+		{{/header-block}}
+        <!-- #header end -->
+
+		{{#> content-block }}
+			TODO - Add some content
+		{{/content-block}}
+
+        <!-- Footer
+        ============================================= -->
+        {{> includes/footer}}
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+    {{> includes/javascripts}}
+
+</body>
+</html>

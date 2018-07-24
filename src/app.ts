@@ -31,6 +31,7 @@ export const getApp = async () => {
     app.get('/ping', (req, res) => res.send('pong'))
 
     app.get('/home', (req, res) => res.render('pages/home'))
+    app.get('/checkout', (req, res) => res.render('pages/checkout'))
     app.get('/', (req, res) => res.redirect('/home'))
 
     return app
