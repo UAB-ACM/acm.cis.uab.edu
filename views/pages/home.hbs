@@ -1,6 +1,15 @@
-{{#> layouts/main }}
+{{#> layouts/base }}
 
-    {{#*inline "content-block"}}
+    {{#*inline "content"}}
+
+        {{> includes/top_bar}}
+
+        <header id="header" class="full-header transparent-header dark" data-sticky-class="not-dark">
+
+            {{> includes/header_inner}}
+
+        </header>
+
 		<section id="slider" class="slider-element bg-angle">
 
 			<!-- Slider Background Map
@@ -27,7 +36,7 @@
 								<h2 class="text-white text-rotater mb-3" data-separator="," data-rotate="fadeIn" data-speed="3500">Advancing Computing as a Science & Profession</h2>
 								<p>We see a world where computing helps solve tomorrow’s problems – where we use our knowledge and skills to advance the profession and make a positive impact.</p>
 							</div>
-							<a href="#" class="button bg-white text-dark button-light button-rounded button-large color ml-0">Become a Member <i class="icon-line-arrow-right t600"></i></a>
+							<a href="/purchase" class="button bg-white text-dark button-light button-rounded button-large color ml-0">Become a Member <i class="icon-line-arrow-right t600"></i></a>
 						</div>
 						<div class="col-md-5 d-none d-md-block">
 							<img src="demos/hosting/images/3.png" alt="">
@@ -144,7 +153,7 @@
 								<h2 class="t700 text-white mb-3">Make an Impact. Join ACM!</h2>
 							</div>
 							<div class="col-md-8">
-								<a href="#" class="button center bg-white color button-light button-rounded button-large ml-0">Become a Member</a>
+								<a href="/purchase" class="button center bg-white color button-light button-rounded button-large ml-0">Become a Member</a>
 							</div>
 						</div>
 					</div>
@@ -153,6 +162,9 @@
 			</div>
 
 		</section>
+
+        {{> includes/footer}}
+
     {{/inline}}
 	
-{{/layouts/main}}
+{{/layouts/base}}

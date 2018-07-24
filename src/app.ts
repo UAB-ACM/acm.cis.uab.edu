@@ -31,7 +31,10 @@ export const getApp = async () => {
     app.get('/ping', (req, res) => res.send('pong'))
 
     app.get('/home', (req, res) => res.render('pages/home'))
-    app.get('/checkout', (req, res) => res.render('pages/checkout'))
+    app.get('/contact', (req, res) => res.render('pages/contact'))
+    app.get('/member-login', (req, res) => res.render('pages/members/login'))
+    app.get('/membership', (req, res) => res.render('pages/members/membership'))
+    app.get('/purchase', (req, res) => res.render('pages/members/purchase'))
     app.get('/', (req, res) => res.redirect('/home'))
 
     return app

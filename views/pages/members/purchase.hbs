@@ -1,0 +1,138 @@
+{{#> layouts/base }}
+
+
+    {{#*inline "content"}}
+        {{> includes/header_opaque}}
+
+        <!-- Page Title
+		============================================= -->
+        <section id="page-title">
+
+            <div class="container clearfix">
+                <h1>Purchase Membership</h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Member Portal</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                </ol>
+            </div>
+
+        </section>
+
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <div class="row clearfix">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body p-10">
+                                    Already have an account? <a href="/member-login">Click here to login</a>
+                                </div>
+                            </div>
+                            <br/>
+
+                            <h3>Member Information</h3>
+
+                            <p>Upon account creation, you will be emailed a temporary password that you can use to login and manage your account.</p>
+
+                            <form id="billing-form" name="billing-form" class="nobottommargin" action="#" method="post">
+
+                                <div class="col_half">
+                                    <label for="billing-form-name">Full Name:</label>
+                                    <input type="text" id="billing-form-name" name="billing-form-name" value="" class="sm-form-control" />
+                                </div>
+
+                                <div class="col_half col_last">
+                                    <label for="billing-form-lname">Preferred Email:</label>
+                                    <input type="text" id="billing-form-lname" name="billing-form-lname" value="" class="sm-form-control" />
+                                </div>
+
+                                <div class="clear"></div>
+
+                                <div class="col_half">
+                                    <label for="billing-form-name">UAB Blazer-ID:</label>
+                                    <input type="text" id="billing-form-name" name="billing-form-name" value="" class="sm-form-control" />
+                                </div>
+
+                                <div class="col_half col_last">
+                                    <label for="billing-form-phone">Phone:</label>
+                                    <input type="text" id="billing-form-phone" name="billing-form-phone" value="" class="sm-form-control" />
+                                </div>
+
+                            </form>
+
+                            <!--<h3 class="">Billing Information</h3>-->
+
+                            <!--<form id="shipping-form" name="shipping-form" class="nobottommargin" action="#" method="post">-->
+
+                                <!--<div class="col_full">-->
+                                    <!--<label for="shipping-form-companyname">Card Number:</label>-->
+                                    <!--<input type="text" id="shipping-form-companyname" name="shipping-form-companyname" value="" class="sm-form-control" />-->
+                                <!--</div>-->
+
+                                <!--<div class="col_half">-->
+                                    <!--<label for="shipping-form-name">Expiration:</label>-->
+                                    <!--<input type="text" id="shipping-form-name" name="shipping-form-name" value="" class="sm-form-control" />-->
+                                <!--</div>-->
+
+                                <!--<div class="col_half col_last">-->
+                                    <!--<label for="shipping-form-lname">Security Code:</label>-->
+                                    <!--<input type="text" id="shipping-form-lname" name="shipping-form-lname" value="" class="sm-form-control" />-->
+                                <!--</div>-->
+
+                            <!--</form>-->
+
+
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <h4>Cart Totals</h4>
+
+                            <p>You will be billed at a rate of <b>$20 per semester</b> until you cancel your membership. You may cancel your membership easily, at any time.</p>
+
+                            <div class="table-responsive">
+                                <table class="table cart">
+                                    <tbody>
+                                    <tr class="cart_item">
+                                        <td class="cart-product-name">
+                                            <strong>This Payment</strong>
+                                        </td>
+
+                                        <td class="cart-product-name">
+                                            <span class="amount color lead"><strong>$20</strong></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="accordion clearfix">
+                                <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i> Security Information </div>
+                                <div class="acc_content clearfix">Payments are processed securely through Stripe. Your sensitive payment information never touches our servers.</div>
+
+                                <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i> How do I cancel? </div>
+                                <div class="acc_content clearfix">Once you have an account, you can login to our member portal at any time to manage or cancel your account.</div>
+
+                                <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i> Other ways to Pay </div>
+                                <div class="acc_content clearfix">You can also drop off a check at our headquarters if you do not wish to pay through the website.</div>
+                            </div>
+                            <a href="#" class="button button-3d fright">Place Order</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        {{> includes/footer}}
+    {{/inline}}
+
+
+{{/layouts/base}}
