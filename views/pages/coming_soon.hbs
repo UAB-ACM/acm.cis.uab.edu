@@ -3,7 +3,7 @@
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="SemiColonWeb" />
+    <meta name="author" content="UAB ACM" />
 
     <!-- Stylesheets
     ============================================= -->
@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="css/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Document Title
-    ============================================= -->
-    <title>Coming Soon | Canvas</title>
+    <title>Coming Soon | ACM at UAB</title>
 
 </head>
 
@@ -61,7 +59,7 @@
 
                 <div class="heading-block title-center nobottomborder">
                     <h1>We are currently Under Construction</h1>
-                    <span>Please check back again within Some Days as We're Pretty Close</span>
+                    <span>Please check back again in a few days, as we're pretty close!</span>
                 </div>
 
                 <div id="countdown-ex1" class="countdown countdown-large divcenter bottommargin" style="max-width:700px;"></div>
@@ -77,12 +75,13 @@
                 <div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
 
                 <div class="widget-subscribe-form-result"></div>
-                <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+
+                <form id="widget-subscribe-form" action="api/newsletter/subscribe" role="form" method="post" class="nobottommargin">
                     <div class="input-group input-group-lg divcenter" style="max-width:600px;">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="icon-email2"></i></div>
                         </div>
-                        <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+                        <input type="email" name="email" class="form-control required email" placeholder="Enter your Email">
                         <div class="input-group-append">
                             <button class="btn btn-secondary" type="submit">Subscribe Now</button>
                         </div>
@@ -94,75 +93,6 @@
         </div>
 
     </section><!-- #content end -->
-
-    <!-- Footer
-    ============================================= -->
-    <footer id="footer" class="dark">
-
-        <!-- Copyrights
-        ============================================= -->
-        <div id="copyrights">
-
-            <div class="container clearfix">
-
-                <div class="col_half">
-                    Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
-                </div>
-
-                <div class="col_half col_last tright">
-                    <div class="fright clearfix">
-                        <a href="#" class="social-icon si-small si-borderless si-facebook">
-                            <i class="icon-facebook"></i>
-                            <i class="icon-facebook"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-twitter">
-                            <i class="icon-twitter"></i>
-                            <i class="icon-twitter"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-gplus">
-                            <i class="icon-gplus"></i>
-                            <i class="icon-gplus"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-pinterest">
-                            <i class="icon-pinterest"></i>
-                            <i class="icon-pinterest"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-vimeo">
-                            <i class="icon-vimeo"></i>
-                            <i class="icon-vimeo"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-github">
-                            <i class="icon-github"></i>
-                            <i class="icon-github"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-yahoo">
-                            <i class="icon-yahoo"></i>
-                            <i class="icon-yahoo"></i>
-                        </a>
-
-                        <a href="#" class="social-icon si-small si-borderless si-linkedin">
-                            <i class="icon-linkedin"></i>
-                            <i class="icon-linkedin"></i>
-                        </a>
-                    </div>
-
-                    <div class="clear"></div>
-
-                    <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
-                </div>
-
-            </div>
-
-        </div><!-- #copyrights end -->
-
-    </footer><!-- #footer end -->
 
 </div><!-- #wrapper end -->
 
@@ -181,7 +111,7 @@
 
 <script>
     jQuery(document).ready( function($){
-        var newDate = new Date(2018, 9, 31);
+        var newDate = new Date(2018, 7, 27);
         $('#countdown-ex1').countdown({until: newDate});
     });
 </script>
