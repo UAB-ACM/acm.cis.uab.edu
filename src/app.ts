@@ -4,11 +4,12 @@ import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import hbs from 'hbs'
 import path from "path"
+import {NewsletterModule} from "./api/newsletter/newsletter.module"
 
 export const getApp = async () => {
 
     // Environment Variables
-    dotenv.config({ path: ".env" })
+    dotenv.config({path: ".env"})
 
     // Configuration
     const app = express()
@@ -22,14 +23,23 @@ export const getApp = async () => {
     // Global Middleware
     app.use(compression())
     app.use(bodyParser.json())
-    app.use(bodyParser.urlencoded({ extended: true }))
+    app.use(bodyParser.urlencoded({extended: true}))
 
     // Static Files
     app.use(express.static(path.join(__dirname, "public")))
 
-    // Routes
-    app.get('/ping', (req, res) => res.send('pong'))
+    // Modules
+    let newsletter = NewsletterModule({ env: process.env })
 
+    // API Endpoints
+    let apiRouter = express.Router()
+    apiRouter.get('/ping', (req, res) => res.send('pong'))
+    apiRouter.use(newsletter.routes())
+
+    app.use('/api', apiRouter)
+
+    // View Routing
+    app.use((req, res) => res.render('pages/coming_soon'))
     app.get('/home', (req, res) => res.render('pages/home'))
     app.get('/contact', (req, res) => res.render('pages/contact'))
     app.get('/member-login', (req, res) => res.render('pages/members/login'))
