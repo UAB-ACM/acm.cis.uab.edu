@@ -1,0 +1,171 @@
+{{#> layouts/base }}
+
+    {{#*inline "content"}}
+
+        {{> includes/top_bar}}
+        {{> includes/header_opaque}}
+
+        <!-- Page Title
+		============================================= -->
+        <section id="page-title">
+
+            <div class="container clearfix">
+                <h1>Computer Science Tutoring at UAB</h1>
+                <span>Schedule a tutoring session here</span>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/home">Student Services</a></li>
+                    <li class="breadcrumb-item active">Tutoring</li>
+                </ol>
+            </div>
+
+        </section><!-- #page-title end -->
+
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+                        <ul id="portfolio-filter" class="portfolio-filter clearfix">
+
+                            <li class="activeFilter"><a href="#" data-filter="all">All</a></li>
+                            {{#each categories}}
+                                <li><a href="#" data-filter=".{{key}}">{{label}}</a></li>
+                            {{/each}}
+
+                        </ul>
+
+                        <div class="clear"></div>
+
+                        <div id="courses" class="faqs">
+
+                            {{#each courses}}
+                                <div class="toggle faq {{categories}}">
+                                    <div class="togglet"><i class="toggle-closed {{icon}}"></i><i
+                                            class="toggle-open {{icon}}"></i>{{name}} <small>({{categories}})</small>
+                                    </div>
+                                    <!--<div class="togglec"></div>-->
+                                </div>
+                            {{/each}}
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- Sidebar
+                    ============================================= -->
+                    <div class="sidebar nobottommargin col_last clearfix">
+                        <div class="sidebar-widgets-wrap">
+
+                            <div class="widget widget_links clearfix">
+
+                                <h4>Book a Session:</h4>
+
+                                <form id="request-tutoring-form">
+                                    <div class="form-group">
+                                        <label for="blazer_id">Your BlazerID:</label>
+                                        <input class="form-control" name="blazer_id" id="blazer_id" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Preferred Email:</label>
+                                        <input class="form-control" type="email" name="email" id="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="topic">Topic or Course Number</label>
+                                        <input class="form-control" name="topic" id="topic" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">What can we help with?</label>
+                                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" required
+                                                  rows="3"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Submit Request
+                                        <img id="form-loader" src="loaders/loader.gif" style="display: none; height: 20px"/>
+                                    </button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        {{> includes/footer}}
+
+    {{/inline}}
+
+    {{#*inline "scripts"}}
+
+        <script>
+            // FORM SUBMISSIONS
+            // TODO - form validation
+            const requestForm = $("#request-tutoring-form")
+            requestForm.on('submit', event => {
+                event.preventDefault()
+                if(!document.getElementById('request-tutoring-form').checkValidity())
+                    return alert('Invalid Form')
+                $('#form-loader').show()
+
+                API.requestTutoring(requestForm.serialize())
+                        .then(res => {
+                            $('#form-loader').hide()
+                            swal(res.msg)
+                            requestForm[0].reset()
+                        })
+                        .catch(err => {
+                            swal('Error', err, 'error')
+                        })
+            })
+        </script>
+
+        <script>
+            jQuery(document).ready(function ($) {
+                var $faqItems = $('#courses .faq');
+                if (window.location.hash != '') {
+                    var getFaqFilterHash = window.location.hash;
+                    var hashFaqFilter = getFaqFilterHash.split('#');
+                    if ($faqItems.hasClass(hashFaqFilter[1])) {
+                        $('#portfolio-filter li').removeClass('activeFilter');
+                        $('[data-filter=".' + hashFaqFilter[1] + '"]').parent('li').addClass('activeFilter');
+                        var hashFaqSelector = '.' + hashFaqFilter[1];
+                        $faqItems.css('display', 'none');
+                        if (hashFaqSelector != 'all') {
+                            $(hashFaqSelector).fadeIn(500);
+                        } else {
+                            $faqItems.fadeIn(500);
+                        }
+                    }
+                }
+
+                $('#portfolio-filter a').click(function () {
+                    $('#portfolio-filter li').removeClass('activeFilter');
+                    $(this).parent('li').addClass('activeFilter');
+                    var faqSelector = $(this).attr('data-filter');
+                    $faqItems.css('display', 'none');
+                    if (faqSelector != 'all') {
+                        $(faqSelector).fadeIn(500);
+                    } else {
+                        $faqItems.fadeIn(500);
+                    }
+                    return false;
+                });
+            });
+        </script>
+    {{/inline}}
+
+{{/layouts/base}}

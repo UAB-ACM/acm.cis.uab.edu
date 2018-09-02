@@ -31,12 +31,22 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     {{> includes/google_analytics}}
 
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="js/jquery.js"></script>
+
+    <!-- REST API -->
+    <script src="js/API.js"></script>
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body class="stretched">
 
-	<!-- Document Wrapper
-	============================================= -->
+<!-- Document Wrapper
+============================================= -->
 	<div id="wrapper" class="clearfix">
 
 		{{#> content }}
@@ -45,14 +55,10 @@
 
 	</div><!-- #wrapper end -->
 
-	<!-- External JavaScripts
-	============================================= -->
-    <script src="js/jquery.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/functions.js"></script>
 
     {{#> scripts }}
     {{/scripts}}
-
 </body>
 </html>

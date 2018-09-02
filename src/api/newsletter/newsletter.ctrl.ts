@@ -1,4 +1,4 @@
-export const NewsletterController = ({mailgun, newsletterList}) => ({
+export const NewsletterController = ({newsletterService, list}) => ({
 
     /**
      * Adds an email to our mailing list. Powered by MailGun.
@@ -10,20 +10,9 @@ export const NewsletterController = ({mailgun, newsletterList}) => ({
         if (!email || !name)
             return res.status(400).json({msg: "Invalid Params. Must provide email and name"})
 
-        return mailgun.lists(newsletterList)
-            .members()
-            .create({
-                subscribed: true,
-                address: email,
-                name,
-                upsert: 'yes',
-                vars: {} // custom data here
-            })
-            .then(reply => res.json(reply))
-            .catch(err => {
-                console.log(err)
-                res.status(500).json(err)
-            })
+        newsletterService.addToMailingList(list)({ name, email })
+            .then(r => res.json(r))
+            .catch(e => res.status(400).json({ err: e }))
     }
 
 })
