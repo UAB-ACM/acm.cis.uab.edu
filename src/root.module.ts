@@ -10,8 +10,8 @@ import {pushTutoringTicketToTrello} from "./api/tutoring/trello.reactor"
 import {ApplicationsService} from "./api/applications/applications.service"
 import {ApplicationsController} from "./api/applications/applications.ctrl"
 import {Trello} from "./api/core/trello/Trello"
-import {APPLICATION_CREATED} from "./api/applications/Application";
-import {pushApplicationToTrello} from "./api/applications/reactors/trello";
+import {APPLICATION_CREATED} from "./api/applications/Application"
+import {pushApplicationToTrello} from "./api/applications/reactors/trello"
 
 /**
  * The root module of our application.

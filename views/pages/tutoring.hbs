@@ -5,6 +5,14 @@
         {{> includes/top_bar}}
         {{> includes/header_opaque}}
 
+        <style>
+            .session-option {
+                cursor: pointer;
+                color: crimson;
+                font-weight: bold;
+            }
+        </style>
+
         <!-- Page Title
 		============================================= -->
         <section id="page-title">
@@ -33,29 +41,70 @@
                     ============================================= -->
                     <div class="postcontent nobottommargin clearfix">
 
-                        <ul id="portfolio-filter" class="portfolio-filter clearfix">
-
-                            <li class="activeFilter"><a href="#" data-filter="all">All</a></li>
-                            {{#each categories}}
-                                <li><a href="#" data-filter=".{{key}}">{{label}}</a></li>
-                            {{/each}}
-
-                        </ul>
-
-                        <div class="clear"></div>
-
-                        <div id="courses" class="faqs">
-
-                            {{#each courses}}
-                                <div class="toggle faq {{categories}}">
-                                    <div class="togglet"><i class="toggle-closed {{icon}}"></i><i
-                                            class="toggle-open {{icon}}"></i>{{name}} <small>({{categories}})</small>
-                                    </div>
-                                    <!--<div class="togglec"></div>-->
-                                </div>
-                            {{/each}}
-
+                        <div class="title-block">
+                            <h3>ACM Tutoring <span>Office Hours</span></h3>
+                            <span>Click a session time from the table below and fill out the form on the right to guarantee availability.</span>
+                            <span><b>All tutoring sessions are held in Campbell Hall room 134</b></span>
                         </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Mon</th>
+                                <th>Tues</th>
+                                <th>Wed</th>
+                                <th>Thurs</th>
+                                <th>Fri</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td onclick="setSession('TUE 08-09')" class="session-option">8:00am - 9:00am</td>
+                                <td onclick="setSession('WED 10:15-11:15')" class="session-option">10:15am - 11:15am</td>
+                                <td onclick="setSession('THR 08-09')" class="session-option">8:00am - 9:00am</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="session-option"></td>
+                                <td onclick="setSession('WED 11-12:30')" class="session-option">11:00am - 12:30pm</td>
+                                <td class="session-option"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td onclick="setSession('THR 13-14')" class="session-option">1:00pm - 2:00pm</td>
+                                <td onclick="setSession('FRI 13-14')" class="session-option">1:00pm - 2:00pm</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <!--<ul id="portfolio-filter" class="portfolio-filter clearfix">-->
+
+                            <!--<li class="activeFilter"><a href="#" data-filter="all">All</a></li>-->
+                            <!--{{#each categories}}-->
+                                <!--<li><a href="#" data-filter=".{{key}}">{{label}}</a></li>-->
+                            <!--{{/each}}-->
+
+                        <!--</ul>-->
+
+                        <!--<div class="clear"></div>-->
+
+                        <!--<div id="courses" class="faqs">-->
+
+                            <!--{{#each courses}}-->
+                                <!--<div class="toggle faq {{categories}}">-->
+                                    <!--<div class="togglet"><i class="toggle-closed {{icon}}"></i><i-->
+                                            <!--class="toggle-open {{icon}}"></i>{{name}} <small>({{categories}})</small>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="togglec"></div>&ndash;&gt;-->
+                                <!--</div>-->
+                            <!--{{/each}}-->
+
+                        <!--</div>-->
 
 
                     </div>
@@ -81,6 +130,10 @@
                                     <div class="form-group">
                                         <label for="topic">Topic or Course Number</label>
                                         <input class="form-control" name="topic" id="topic" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="time">Session Time</label>
+                                        <input class="form-control" name="time" id="time" placeholder="Click a time from the table" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">What can we help with?</label>
@@ -110,6 +163,10 @@
     {{/inline}}
 
     {{#*inline "scripts"}}
+
+        <script>
+            const setSession = (datetime) => $('#time').val(datetime)
+        </script>
 
         <script>
             // FORM SUBMISSIONS

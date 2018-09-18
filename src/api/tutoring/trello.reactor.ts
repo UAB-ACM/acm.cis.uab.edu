@@ -5,6 +5,7 @@ export const pushTutoringTicketToTrello = (trello: Trello) => (list) => (ticket:
     trello.addCard(list)({
         desc: '```json' + JSON.stringify(ticket, null, 2) + '```',
         name: `${ticket.blazer_id} needs help with ${ticket.topic}`,
+        time: ticket.time,
         pos: 'top',
         due: null,
         idList: list

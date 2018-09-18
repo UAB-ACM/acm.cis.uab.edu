@@ -7,6 +7,7 @@ export interface TutoringTicket {
     blazer_id: string
     message: string
     topic: string
+    time: string
     email: string
     preferred_email: string
 }
